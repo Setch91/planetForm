@@ -6,11 +6,15 @@ window.addEventListener("load",function(){
       let copilotInput = document.querySelector("input[name=copilotName")
       let fuelInput = document.querySelector("input[name=fuelLevel")
       let cargoInput = document.querySelector("input[name=cargoMass")
+      console.log(typeof pilotInput.value)
+      console.log(typeof copilotInput.value)
+      console.log(typeof fuelInput.value)
+      console.log(typeof cargoInput.value)
       if (pilotInput.value === ""|| copilotInput.value === "" || fuelInput.value === "" || cargoInput.value === ""){
          alert("All fields are required!")
          event.preventDefault()
       } 
-      else if (typeof pilotInput != "string" || typeof copilotInput != "string" || typeof fuelInput != "number" || typeof cargoInput != "number"){
+      else if (typeof pilotInput.value != "string" || typeof copilotInput.value != "string" || Number(fuelInput.value) === "number" || Number(cargoInput.value) === "number"){
          alert("Incorrect values!")
          event.preventDefault()
       }
